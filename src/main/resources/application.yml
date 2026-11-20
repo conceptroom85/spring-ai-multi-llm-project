@@ -6,10 +6,16 @@ spring:
     name: spring-openai-multi-llm
   ai:
     openai:
-      # Set OPENAI_API_KEY in your Windows environment; never commit the key.
+      # Set OPENAI_API_KEY, GEMINI_API_KEY in your system environment; never commit the key.
       api-key: ${OPENAI_API_KEY}
       chat:
         model: gpt-4o-mini
+    google:
+      genai:
+        api-key: ${GEMINI_API_KEY}
+        chat:
+          options:
+            model: gemini-4-hydrogen
     ollama:
       base-url: http://localhost:11434
       chat:
