@@ -12,12 +12,15 @@ import java.util.Locale;
 public class ChatService {
 
     private final ChatClient openAiChatClient;
+    private final ChatClient googleGenAiChatClient;
     private final ChatClient ollamaChatClient;
 
     public ChatService(
             @Qualifier("openAiChatClient") ChatClient openAiChatClient,
+            @Qualifier("googleGenAiChatClient") ChatClient googleGenAiChatClient,
             @Qualifier("ollamaChatClient") ChatClient ollamaChatClient) {
         this.openAiChatClient = openAiChatClient;
+        this.googleGenAiChatClient = googleGenAiChatClient;
         this.ollamaChatClient = ollamaChatClient;
     }
 
@@ -27,8 +30,9 @@ public class ChatService {
         ChatClient selectedClient = switch (selectedModel) {
             case "openai" -> openAiChatClient;
             case "ollama" -> ollamaChatClient;
+            case "googlegenai" -> googleGenAiChatClient;
             default -> throw new IllegalArgumentException(
-                    "Unsupported model: " + request.model() + ". Use 'openai' or 'ollama'.");
+                    "Unsupported model: " + request.model() + ". Use 'openai' or 'ollama' or 'googlegenai'.");
         };
 
         String answer = selectedClient.prompt()

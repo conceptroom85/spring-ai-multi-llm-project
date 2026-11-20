@@ -23,7 +23,7 @@ public class ChatController {
             throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "message must not be blank");
         }
         if (request.model() == null || request.model().isBlank()) {
-            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "model must be 'openai' or 'ollama'");
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "model must be 'openai' or 'ollama' or 'googlegenai'");
         }
 
         try {

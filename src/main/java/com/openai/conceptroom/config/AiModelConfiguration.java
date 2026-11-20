@@ -2,6 +2,7 @@ package com.openai.conceptroom.config;
 
 import org.springframework.ai.chat.client.ChatClient;
 import org.springframework.ai.chat.model.ChatModel;
+import org.springframework.ai.google.genai.GoogleGenAiChatModel;
 import org.springframework.ai.ollama.OllamaChatModel;
 import org.springframework.ai.openai.OpenAiChatModel;
 import org.springframework.context.annotation.Bean;
@@ -26,6 +27,11 @@ public class AiModelConfiguration {
     @Bean("openAiChatClient")
     ChatClient openAiChatClient(OpenAiChatModel openAiChatModel) {
         return ChatClient.create(openAiChatModel);
+    }
+
+    @Bean("googleGenAiChatClient")
+    ChatClient googleGenAiChatClient(GoogleGenAiChatModel googleGenAiChatModel) {
+        return ChatClient.create(googleGenAiChatModel);
     }
 
     @Bean("ollamaChatClient")
