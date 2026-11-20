@@ -1,0 +1,6 @@
+com\openai\conceptroom\service\ChatService.class
+com\openai\conceptroom\dto\ChatRequest.class
+com\openai\conceptroom\controller\ChatController.class
+com\openai\conceptroom\config\AiModelConfiguration.class
+com\openai\conceptroom\SpringOpenaiApplication.class
+com\openai\conceptroom\dto\ChatResponse.class

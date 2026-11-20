@@ -1,0 +1,16 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: spring-openai-multi-llm
+  ai:
+    openai:
+      # Set OPENAI_API_KEY in your Windows environment; never commit the key.
+      api-key: ${OPENAI_API_KEY}
+      chat:
+        model: gpt-4o-mini
+    ollama:
+      base-url: http://localhost:11434
+      chat:
+        model: llama3.2:1b
