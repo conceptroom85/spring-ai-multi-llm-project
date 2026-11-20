@@ -118,6 +118,13 @@ src/main/resources/
 
 ## Notes
 
+Run Ollama locally, either with Docker container or with installing ollama in local.
+<img width="1916" height="1010" alt="image" src="https://github.com/user-attachments/assets/1faeea35-dc7b-4e0e-9f81-82ee28e0a6ad" />
+Sample Request and Response(Tested with POSTMAN)
+<img width="1912" height="1032" alt="image" src="https://github.com/user-attachments/assets/9486b841-c06f-421f-8708-b8d1acac5186" />
+
+
+
 - Both model starters are included and both models are explicitly wired to separate `ChatClient` instances.
 - `@Primary` selects OpenAI as the default `ChatModel` for Spring AI's auto-configured builder; the service does not rely on that default when routing requests.
 - OpenAI calls use the internet and may incur API charges. Ollama calls use the model downloaded on your machine.
